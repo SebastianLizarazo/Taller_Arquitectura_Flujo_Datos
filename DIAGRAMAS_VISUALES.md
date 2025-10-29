@@ -310,11 +310,4 @@ ESTADÍSTICAS:
 🔻 Promedio Mínimo:    1.77 (Pedro Sánchez)
 ```
 
----
 
-## Notas sobre los Diagramas
-
-📌 **ASCII Art**: Estos diagramas están diseñados para verse bien en cualquier editor de texto  
-📌 **Emojis**: Facilitan la comprensión visual de estados y resultados  
-📌 **Boxes**: Las cajas delimitan claramente cada componente del sistema  
-📌 **Flechas**: Indican el flujo de datos entre componentes
