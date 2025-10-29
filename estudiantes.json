@@ -1,0 +1,72 @@
+[
+    {
+        "nombre": "Ana García",
+        "asignatura": "Matemáticas",
+        "nota1": 4.5,
+        "nota2": 4.0,
+        "nota3": 4.8
+    },
+    {
+        "nombre": "Carlos Pérez",
+        "asignatura": "Física",
+        "nota1": 3.5,
+        "nota2": 3.0,
+        "nota3": 3.2
+    },
+    {
+        "nombre": "María López",
+        "asignatura": "Química",
+        "nota1": 2.5,
+        "nota2": 2.8,
+        "nota3": 2.3
+    },
+    {
+        "nombre": "Juan Martínez",
+        "asignatura": "Programación",
+        "nota1": 5.0,
+        "nota2": 4.9,
+        "nota3": 5.0
+    },
+    {
+        "nombre": "Laura Rodríguez",
+        "asignatura": "Base de Datos",
+        "nota1": 3.0,
+        "nota2": 3.0,
+        "nota3": 3.0
+    },
+    {
+        "nombre": "Pedro Sánchez",
+        "asignatura": "Inglés",
+        "nota1": 1.5,
+        "nota2": 2.0,
+        "nota3": 1.8
+    },
+    {
+        "nombre": "Sofia Torres",
+        "asignatura": "Arquitectura de Software",
+        "nota1": 6.0,
+        "nota2": 4.5,
+        "nota3": 3.5
+    },
+    {
+        "nombre": "Diego Ramírez",
+        "asignatura": "Redes",
+        "nota1": 4.2,
+        "nota2": -1.0,
+        "nota3": 4.0
+    },
+    {
+        "nombre": "Valentina Castro",
+        "asignatura": "Sistemas Operativos",
+        "nota1": 4.0,
+        "nota2": 3.8,
+        "nota3": 4.2
+    },
+    {
+        "nombre": "Andrés Gómez",
+        "asignatura": "Ingeniería de Software",
+        "nota1": 2.8,
+        "nota2": 3.1,
+        "nota3": 2.9
+    }
+]

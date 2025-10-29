@@ -1,0 +1,90 @@
+[
+    {
+        "nombre": "Ana García",
+        "asignatura": "Matemáticas",
+        "nota1": 4.5,
+        "nota2": 4.0,
+        "nota3": 4.8,
+        "promedio": 4.43,
+        "estado": "APROBADO",
+        "valido": true,
+        "mensaje_error": ""
+    },
+    {
+        "nombre": "Carlos Pérez",
+        "asignatura": "Física",
+        "nota1": 3.5,
+        "nota2": 3.0,
+        "nota3": 3.2,
+        "promedio": 3.23,
+        "estado": "APROBADO",
+        "valido": true,
+        "mensaje_error": ""
+    },
+    {
+        "nombre": "María López",
+        "asignatura": "Química",
+        "nota1": 2.5,
+        "nota2": 2.8,
+        "nota3": 2.3,
+        "promedio": 2.53,
+        "estado": "NO APROBADO",
+        "valido": true,
+        "mensaje_error": ""
+    },
+    {
+        "nombre": "Juan Martínez",
+        "asignatura": "Programación",
+        "nota1": 5.0,
+        "nota2": 4.9,
+        "nota3": 5.0,
+        "promedio": 4.97,
+        "estado": "APROBADO",
+        "valido": true,
+        "mensaje_error": ""
+    },
+    {
+        "nombre": "Laura Rodríguez",
+        "asignatura": "Base de Datos",
+        "nota1": 3.0,
+        "nota2": 3.0,
+        "nota3": 3.0,
+        "promedio": 3.0,
+        "estado": "APROBADO",
+        "valido": true,
+        "mensaje_error": ""
+    },
+    {
+        "nombre": "Pedro Sánchez",
+        "asignatura": "Inglés",
+        "nota1": 1.5,
+        "nota2": 2.0,
+        "nota3": 1.8,
+        "promedio": 1.77,
+        "estado": "NO APROBADO",
+        "valido": true,
+        "mensaje_error": ""
+    },
+    {
+        "nombre": "Sofia Torres",
+        "asignatura": "Arquitectura SW",
+        "nota1": 6.0,
+        "nota2": 4.5,
+        "nota3": 3.5,
+        "promedio": 0.0,
+        "estado": "DATOS INVÁLIDOS",
+        "valido": false,
+        "mensaje_error": "Notas fuera del rango [0-5]: [6.0]"
+    },
+    {
+        "nombre": "Diego Ramírez",
+        "asignatura": "Redes",
+        "nota1": 4.2,
+        "nota2": -1.0,
+        "nota3": 4.0,
+        "promedio": 0.0,
+        "estado": "DATOS INVÁLIDOS",
+        "valido": false,
+        "mensaje_error": "Notas fuera del rango [0-5]: [-1.0]"
+    }
+]
