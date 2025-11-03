@@ -57,7 +57,7 @@ def filtro_validacion(estudiantes: List[Estudiante]) -> List[Estudiante]:
     FILTRO 1: Validación de Notas
     Valida que todas las notas estén en el rango [0, 5]
     """
-    print("\n🔍 FILTRO 1: Validando notas...")
+    print("\nFILTRO 1: Validando notas...")
     estudiantes_validados = []
 
     for estudiante in estudiantes:
@@ -70,11 +70,11 @@ def filtro_validacion(estudiantes: List[Estudiante]) -> List[Estudiante]:
             estudiante.valido = False
             estudiante.mensaje_error = f"Notas fuera del rango [0-5]: {notas_invalidas}"
             print(
-                f"   ❌ {estudiante.nombre} - {estudiante.asignatura}: {estudiante.mensaje_error}")
+                f"{estudiante.nombre} - {estudiante.asignatura}: {estudiante.mensaje_error}")
         else:
             estudiante.valido = True
             print(
-                f"   ✓ {estudiante.nombre} - {estudiante.asignatura}: Notas válidas")
+                f"{estudiante.nombre} - {estudiante.asignatura}: Notas válidas")
 
         estudiantes_validados.append(estudiante)
 
@@ -86,7 +86,7 @@ def filtro_calculo_promedio(estudiantes: List[Estudiante]) -> List[Estudiante]:
     FILTRO 2: Cálculo de Promedio
     Calcula el promedio de las tres notas para cada estudiante
     """
-    print("\n📊 FILTRO 2: Calculando promedios...")
+    print("\nFILTRO 2: Calculando promedios...")
 
     for estudiante in estudiantes:
         if estudiante.valido:
@@ -108,7 +108,7 @@ def filtro_clasificacion(estudiantes: List[Estudiante]) -> List[Estudiante]:
     Clasifica a los estudiantes como "APROBADO" o "NO APROBADO"
     Criterio: Promedio >= 3.0 para aprobar
     """
-    print("\n🎯 FILTRO 3: Clasificando estudiantes...")
+    print("\nFILTRO 3: Clasificando estudiantes...")
     NOTA_APROBACION = 3.0
 
     for estudiante in estudiantes:
@@ -116,15 +116,15 @@ def filtro_clasificacion(estudiantes: List[Estudiante]) -> List[Estudiante]:
             if estudiante.promedio >= NOTA_APROBACION:
                 estudiante.estado = "APROBADO"
                 print(
-                    f"   ✅ {estudiante.nombre} - {estudiante.asignatura}: APROBADO ({estudiante.promedio:.2f})")
+                    f"{estudiante.nombre} - {estudiante.asignatura}: APROBADO ({estudiante.promedio:.2f})")
             else:
                 estudiante.estado = "NO APROBADO"
                 print(
-                    f"   ❌ {estudiante.nombre} - {estudiante.asignatura}: NO APROBADO ({estudiante.promedio:.2f})")
+                    f"{estudiante.nombre} - {estudiante.asignatura}: NO APROBADO ({estudiante.promedio:.2f})")
         else:
             estudiante.estado = "DATOS INVÁLIDOS"
             print(
-                f"   ⚠️  {estudiante.nombre} - {estudiante.asignatura}: DATOS INVÁLIDOS")
+                f"{estudiante.nombre} - {estudiante.asignatura}: DATOS INVÁLIDOS")
 
     return estudiantes
 
