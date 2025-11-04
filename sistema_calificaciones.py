@@ -93,11 +93,11 @@ def filtro_calculo_promedio(estudiantes: List[Estudiante]) -> List[Estudiante]:
             estudiante.promedio = (
                 estudiante.nota1 + estudiante.nota2 + estudiante.nota3) / 3
             print(
-                f"   📈 {estudiante.nombre} - {estudiante.asignatura}: Promedio = {estudiante.promedio:.2f}")
+                f"{estudiante.nombre} - {estudiante.asignatura}: Promedio = {estudiante.promedio:.2f}")
         else:
             estudiante.promedio = 0.0
             print(
-                f"   ⚠️  {estudiante.nombre} - {estudiante.asignatura}: Sin promedio (datos inválidos)")
+                f"{estudiante.nombre} - {estudiante.asignatura}: Sin promedio (datos inválidos)")
 
     return estudiantes
 
@@ -129,8 +129,6 @@ def filtro_clasificacion(estudiantes: List[Estudiante]) -> List[Estudiante]:
     return estudiantes
 
 
-# ==================== FUNCIONES AUXILIARES ====================
-
 def cargar_estudiantes_desde_archivo(ruta_archivo: str) -> List[Estudiante]:
     """
     Carga los datos de estudiantes desde un archivo JSON
@@ -150,14 +148,14 @@ def cargar_estudiantes_desde_archivo(ruta_archivo: str) -> List[Estudiante]:
             ]
             return estudiantes
     except FileNotFoundError:
-        print(f"❌ Error: No se encontró el archivo '{ruta_archivo}'")
+        print(f"Error: No se encontró el archivo '{ruta_archivo}'")
         return []
     except json.JSONDecodeError:
         print(
-            f"❌ Error: El archivo '{ruta_archivo}' no tiene un formato JSON válido")
+            f"Error: El archivo '{ruta_archivo}' no tiene un formato JSON válido")
         return []
     except KeyError as e:
-        print(f"❌ Error: Falta el campo {e} en los datos")
+        print(f"Error: Falta el campo {e} en los datos")
         return []
 
 
@@ -180,21 +178,21 @@ def crear_estudiantes_ejemplo() -> List[Estudiante]:
 
 def mostrar_resultados(estudiantes: List[Estudiante]):
     """
-    Muestra los resultados finales en consola con formato
+    Muestra los resultados finales en consola
     """
     print("\n" + "="*80)
-    print("📋 RESULTADOS FINALES DEL PROCESAMIENTO".center(80))
+    print("RESULTADOS FINALES".center(80))
     print("="*80)
 
     aprobados = [e for e in estudiantes if e.estado == "APROBADO"]
     no_aprobados = [e for e in estudiantes if e.estado == "NO APROBADO"]
     invalidos = [e for e in estudiantes if e.estado == "DATOS INVÁLIDOS"]
 
-    print(f"\n📊 ESTADÍSTICAS:")
-    print(f"   Total de estudiantes: {len(estudiantes)}")
-    print(f"   ✅ Aprobados: {len(aprobados)}")
-    print(f"   ❌ No Aprobados: {len(no_aprobados)}")
-    print(f"   ⚠️  Datos Inválidos: {len(invalidos)}")
+    print(f"\nESTADÍSTICAS:")
+    print(f"Total de estudiantes: {len(estudiantes)}")
+    print(f"Aprobados: {len(aprobados)}")
+    print(f"No Aprobados: {len(no_aprobados)}")
+    print(f"Datos Inválidos: {len(invalidos)}")
 
     print(f"\n{'NOMBRE':<20} {'ASIGNATURA':<20} {'N1':<6} {'N2':<6} {'N3':<6} {'PROM':<6} {'ESTADO':<15}")
     print("-" * 80)
@@ -232,47 +230,40 @@ def guardar_resultados(estudiantes: List[Estudiante], ruta_archivo: str):
     try:
         with open(ruta_archivo, 'w', encoding='utf-8') as archivo:
             json.dump(resultados, archivo, indent=4, ensure_ascii=False)
-        print(f"\n💾 Resultados guardados en: {ruta_archivo}")
+        print(f"\nResultados guardados en: {ruta_archivo}")
         return True
     except Exception as e:
-        print(f"\n❌ Error al guardar resultados: {e}")
+        print(f"\nError al guardar resultados: {e}")
         return False
 
-
-# ==================== FUNCIÓN PRINCIPAL ====================
 
 def main():
     """
     Función principal que ejecuta el sistema de procesamiento
     """
-    print("="*80)
-    print("🎓 SISTEMA DE PROCESAMIENTO DE CALIFICACIONES ESTUDIANTILES".center(80))
-    print("Patrón: Filtros y Tuberías (Pipes and Filters)".center(80))
-    print("="*80)
+    print("SISTEMA DE PROCESAMIENTO DE CALIFICACIONES ESTUDIANTILES".center(80))
 
     # Opción 1: Usar datos de ejemplo
-    print("\n📝 Cargando datos de estudiantes...")
     estudiantes = crear_estudiantes_ejemplo()
 
     # Opción 2: Cargar desde archivo (descomenta para usar)
     # estudiantes = cargar_estudiantes_desde_archivo('estudiantes.json')
 
     if not estudiantes:
-        print("❌ No hay datos de estudiantes para procesar")
+        print("No hay datos de estudiantes para procesar")
         return
 
-    print(f"✓ Se cargaron {len(estudiantes)} estudiantes")
+    print(f"Se cargaron {len(estudiantes)} estudiantes")
 
     # Crear el pipeline y agregar los filtros
-    print("\n🔧 Construyendo la tubería de procesamiento...")
+    print("\nCreación de la tubería de procesamiento")
     pipeline = Pipeline()
     pipeline.agregar_filtro(filtro_validacion)
     pipeline.agregar_filtro(filtro_calculo_promedio)
     pipeline.agregar_filtro(filtro_clasificacion)
-    print("✓ Tubería construida con 3 filtros")
+    print("Tubería construida con 3 filtros")
 
     # Ejecutar el pipeline
-    print("\n🚀 Iniciando procesamiento a través de la tubería...")
     print("-" * 80)
 
     resultados = pipeline.ejecutar(estudiantes)
@@ -282,10 +273,6 @@ def main():
 
     # Guardar resultados
     guardar_resultados(resultados, 'resultados_calificaciones.json')
-
-    print("\n" + "="*80)
-    print("✅ Procesamiento completado exitosamente".center(80))
-    print("="*80)
 
 
 if __name__ == "__main__":
