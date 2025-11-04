@@ -1,11 +1,3 @@
-"""
-Sistema de Procesamiento de Calificaciones Estudiantiles
-Implementación del patrón de Filtros y Tuberías (Pipes and Filters)
-
-Autor: Sistema de Calificaciones
-Fecha: 29 de octubre de 2025
-"""
-
 from typing import Dict, List, Any, Callable
 from dataclasses import dataclass
 import json
